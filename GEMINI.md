@@ -4,12 +4,9 @@ This repository contains the deployment configuration for `jassbot`, a Matrix bo
 
 ## Files
 
-*   `jassbot.service`: A systemd service file that defines how to run `jassbot`. It ensures the bot restarts automatically.
-*   `redeploy.sh`: A script to build and redeploy the `jassbot`. It installs the bot using `cargo`, moves the binary to the system path, and restarts the service.
-*   `jassbot.service.d/override.conf`: A systemd override file to provide environment variables to the `jassbot` service. It is used here to configure the bot's password.
+*   `jassbot.service`: A systemd service file that defines how to run `jassbot` as the `pi` user. It ensures the bot restarts automatically and contains the necessary environment variables.
+*   `deploy.sh`: A script to build and deploy the `jassbot`. It installs the bot using `cargo binstall`, copies the service file to the systemd directory, and enables/restarts the service.
 
 ## Usage
 
-To redeploy the bot, run the `redeploy.sh` script.
-
-**Note:** The `jassbot.service.d/override.conf` file contains local modifications (the password) that are not checked into the repository.
+To deploy the bot, run the `deploy.sh` script.

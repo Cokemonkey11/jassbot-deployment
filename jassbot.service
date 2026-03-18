@@ -1,8 +1,12 @@
 [Unit]
 Description=jassbot is the jassdoc bot for matrix.org
-Wants=sshd.service
 
 [Service]
-ExecStart=/usr/sbin/jassbot
+ExecStart=/home/pi/.cargo/bin/jassbot
 RestartSec=5
 Restart=always
+Environment="PASSWORD=uX7PixTaUNkE"
+User=pi
+
+[Install]
+WantedBy=multi-user.target
