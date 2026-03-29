@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cargo binstall -y jassbot
+cargo install jassbot -j 1
 
 sudo cp jassbot.service /etc/systemd/system/
 sudo systemctl daemon-reload
