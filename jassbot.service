@@ -2,11 +2,12 @@
 Description=jassbot is the jassdoc bot for matrix.org
 
 [Service]
-ExecStart=/home/pi/.cargo/bin/jassbot
+ExecStart=/home/debian/.cargo/bin/jassbot
 RestartSec=5
 Restart=always
 Environment="PASSWORD=uX7PixTaUNkE"
-User=pi
+User=debian
+Group=debian
 
 [Install]
 WantedBy=multi-user.target

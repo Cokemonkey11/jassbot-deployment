@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RUSTFLAGS='-C codegen-units=1' nice -n 19 ionice -c 3 taskset -c 0 cargo install jassbot -j1
+cargo install jassbot
 
 sudo cp jassbot.service /etc/systemd/system/
 sudo systemctl daemon-reload
